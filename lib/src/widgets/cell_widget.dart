@@ -44,12 +44,31 @@ class _CellWidget extends StatelessWidget {
   }
 
   Decoration _buildCellDecoration() {
-    if (isSelected && calendarStyle.renderSelectedFirst && calendarStyle.highlightSelected) {
-      return BoxDecoration(shape: BoxShape.circle, color: calendarStyle.selectedColor);
+    if (isSelected &&
+        calendarStyle.renderSelectedFirst &&
+        calendarStyle.highlightSelected) {
+      return BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [Color(0xFF33D8D1), Color(0xFF4782D6)],
+          ),
+          color: calendarStyle.selectedColor);
     } else if (isToday && calendarStyle.highlightToday) {
-      return BoxDecoration(shape: BoxShape.circle, color: calendarStyle.todayColor);
+      return BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: calendarStyle.todayColor, width: 1),
+      );
     } else if (isSelected && calendarStyle.highlightSelected) {
-      return BoxDecoration(shape: BoxShape.circle, color: calendarStyle.selectedColor);
+      return BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [Color(0xFF33D8D1), Color(0xFF4782D6)],
+          ),
+          color: calendarStyle.selectedColor);
     } else {
       return BoxDecoration(shape: BoxShape.circle);
     }
@@ -58,7 +77,9 @@ class _CellWidget extends StatelessWidget {
   TextStyle _buildCellTextStyle() {
     if (isUnavailable) {
       return calendarStyle.unavailableStyle;
-    } else if (isSelected && calendarStyle.renderSelectedFirst && calendarStyle.highlightSelected) {
+    } else if (isSelected &&
+        calendarStyle.renderSelectedFirst &&
+        calendarStyle.highlightSelected) {
       return calendarStyle.selectedStyle;
     } else if (isToday && calendarStyle.highlightToday) {
       return calendarStyle.todayStyle;

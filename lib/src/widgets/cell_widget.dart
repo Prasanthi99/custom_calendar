@@ -52,7 +52,7 @@ class _CellWidget extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Color(0xFF33D8D1), Color(0xFF4782D6)],
+            colors: [Color(0xFF487BD6), Color(0xFF33D8D1)],
           ),
           color: calendarStyle.selectedColor);
     } else if (isToday && calendarStyle.highlightToday) {
@@ -66,7 +66,7 @@ class _CellWidget extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Color(0xFF33D8D1), Color(0xFF4782D6)],
+            colors: [Color(0xFF487BD6), Color(0xFF33D8D1)],
           ),
           color: calendarStyle.selectedColor);
     } else {
